@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOOF AVE - MySpace Core</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'VT323', monospace;
+      background-color: #f7f2f9;
+      color: #3b3b3b;
+      overflow-x: hidden;
+    }
+    .ticker {
+      background: #f7f2f9;
+      border-top: 2px dashed #80dd1d;
+      border-bottom: 2px dashed #80dd1d;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+    .ticker span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+      font-size: 24px;
+      color: #ff4dd2;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    header {
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .main-title {
+      color: #ff4dd2;
+      font-size: 48px;
+      margin: 0;
+    }
+    .music-player {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .about-section {
+      padding: 20px;
+      text-align: center;
+    }
+    .about-section h2 {
+      color: #80dd1d;
+      font-size: 32px;
+    }
+    .about-section p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 10px auto;
+    }
+    .button {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .project-card {
+      background: #ffd6f7;
+      border: 2px solid #3b3b3b;
+      text-align: center;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .under-construction {
+      text-align: center;
+      font-size: 24px;
+      margin-top: 40px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ticker">
+    <span>HELLO WORLD, WELCOME TO <b style="color:#80dd1d">BOOF AVE</b> ✧ HELLO WORLD, WELCOME TO <b style="color:#80dd1d">BOOF AVE</b> ✧</span>
+  </div>
+
+  <header>
+    <h1 class="main-title">HEY WORLD, WELCOME TO BOOF AVE</h1>
+  </header>
+
+  <div class="music-player">
+    <audio controls>
+      <source src="your-track.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <section class="about-section">
+    <h2>ABOUT ME</h2>
+    <p>Hi I'm Kosa, Creative Director of BOOF AVE.<br>I make bold sh*t for bold people. Strategy, design, and vibes.</p>
+    <button class="button">DOWNLOAD MY PORTFOLIO</button>
+  </section>
+
+  <section class="projects">
+    <div class="project-card">🎵 Music Branding</div>
+    <div class="project-card">🧾 Event Identity</div>
+    <div class="project-card">📹 Video Campaign</div>
+    <div class="project-card">👕 Apparel Line</div>
+    <div class="project-card">🖥️ E-Commerce Site</div>
+    <div class="project-card">🎙️ Podcast Cover</div>
+    <div class="project-card">🍔 Restaurant Logo</div>
+    <div class="project-card">🎫 Concert Promo</div>
+  </section>
+
+  <div class="under-construction">
+    🚧 UNDER CONSTRUCTION 🚧
+  </div>
+</body>
+</html>
