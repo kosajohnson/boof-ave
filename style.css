@@ -102,11 +102,11 @@ footer {
   background: var(--accent-color);
   color: #fff;
   border: none;
-  font-size: 2rem;
-  padding: 8px 12px;
+  font-size: 1.2rem;
+  padding: 6px 10px;
   cursor: pointer;
   border-radius: 6px;
-  display: none;
+  display: block;
 }
 
 /* Show hamburger on small screens */
