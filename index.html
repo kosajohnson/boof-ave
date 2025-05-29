@@ -10,57 +10,63 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk&display=swap" rel="stylesheet">
 </head>
 <body class="theme-icy">
-
-  <button id="sidebar-toggle" aria-label="Toggle sidebar">&#9776;</button>
-  <!-- Sidebar -->
-  <aside class="sidebar" id="sidebar">
+  <div class="marquee-container">
+    <h1 class="marquee-text">BOOF AVE™</h1>
+  </div>
+  <header class="site-header">
     <img src="assets/logos/icy blue y2k logo 1.png" alt="BOOF AVE Logo" class="logo"/>
-    <h2>Welcome to BOOF AVE™</h2>
-    <p class="status">Currently building</p>
-    <img src="assets/gifs/loading.gif" alt="Loading..." class="loading-gif"/>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#portfolio">The Portfolio</a>
-      <a href="#form">Book Us</a>
-      <a href="#portal">The Lab</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button id="theme-toggle">Switch Theme</button>
-  </aside>
-
-  <!-- Main Content -->
-  <main>
-    <section class="hero">
-      <h1>BOOF AVE™</h1>
-      <p>Somewhere on BOOF AVE, just beyond our own fantasies.</p>
-    </section>
-
-    <section id="portfolio">
-      <h2>The Portfolio</h2>
-      <div class="gallery-scroll">
-        <!-- Add images or projects here -->
-        <div class="card">[Project 1]</div>
-        <div class="card">[Project 2]</div>
-        <div class="card">[Project 3]</div>
+    <p>Welcome to BOOF AVE</p>
+  </header>
+  <main class="main-columns">
+    <section class="left-panel">
+      <div class="section-box about-box">
+        <h2>About Us</h2>
+        <p>
+          Welcome to BOOF AVE™! We are a creative collective dedicated to bringing your wildest ideas to life. Whether you're here to check out our portfolio, book our services, or just vibe with our favorite artists, you're in the right place. <br>
+          <strong>Somewhere on BOOF AVE, just beyond our own fantasies.</strong>
+        </p>
+      </div>
+      <div class="section-box friends-box">
+        <h2>Top 4 Friends</h2>
+        <div class="friends-grid">
+          <img src="assets/friends/friend1.png" alt="Friend 1" />
+          <img src="assets/friends/friend2.png" alt="Friend 2" />
+          <img src="assets/friends/friend3.png" alt="Friend 3" />
+          <img src="assets/friends/friend4.png" alt="Friend 4" />
+        </div>
+      </div>
+      <div class="section-box form-box">
+        <h2>Book Us</h2>
+        <iframe src="https://your-softr-form-url" width="100%" height="400px" frameborder="0"></iframe>
+        <p class="portal-caption">Click here to check the status of your projects in our portal!</p>
+        <a class="portal-btn" href="https://your-softr-portal-url" target="_blank">Go to Portal</a>
       </div>
     </section>
-
-    <section id="form">
-      <h2>Book Us</h2>
-      <!-- Replace with Softr embed -->
-      <iframe src="https://your-softr-form-url" width="100%" height="600px" frameborder="0"></iframe>
+    <section class="right-panel">
+      <div class="section-box spotify-box">
+        <h2>Artists on the Ave</h2>
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0M1LZjAHdDktpEYYoUerxV?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+      <div class="section-box portfolio-box">
+        <h2>Cool $H!T</h2>
+        <div class="portfolio-grid">
+          <div class="card">[Project 1]</div>
+          <div class="card">[Project 2]</div>
+          <div class="card">[Project 3]</div>
+          <div class="card">[Project 4]</div>
+          <div class="card">[Project 5]</div>
+          <div class="card">[Project 6]</div>
+          <div class="card">[Project 7]</div>
+          <div class="card">[Project 8]</div>
+          <div class="card">[Project 9]</div>
+          <div class="card">[Project 10]</div>
+        </div>
+      </div>
     </section>
-
-    <section id="portal">
-      <h2>Client Portal</h2>
-      <a class="portal-link" href="https://your-softr-portal-url" target="_blank">Enter The Lab</a>
-    </section>
-
-    <footer>
-      <p>© 2025 BOOF AVE™. All rights reserved</p>
-    </footer>
   </main>
-
+  <footer class="site-footer">
+    <p>© 2025 Somewhere on BOOF AVE™. All rights reserved</p>
+  </footer>
   <script src="theme.js"></script>
 </body>
 </html>
