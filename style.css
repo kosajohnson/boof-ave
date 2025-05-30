@@ -29,6 +29,10 @@ body {
   color: var(--text-color);
   display: block;
   cursor: url('assets/other effects/chrome star.png') 16 16, auto;
+  background-image: url('assets/other effects/sparkle bg.png'), var(--bg-color);
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: top left;
 }
 
 main {
@@ -136,28 +140,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Boxes */
 .section-box {
-  background: var(--card-bg);
+  background: #133a5c;
   border: 2px solid var(--primary-color);
-  border-radius: 18px;
+  border-radius: 0;
   padding: 28px 20px 24px 20px;
   margin-bottom: 0;
   box-shadow: 0 2px 12px 0 rgba(117,204,255,0.07);
+  color: #fff;
 }
-.friends-box {
-  background: #e0f1fb;
-  border-color: #75CCFF;
-}
-.form-box {
-  background: #f5faff;
-  border-color: #199BEB;
-}
-.spotify-box {
-  background: #e0f1fb;
-  border-color: #199BEB;
-}
-.portfolio-box {
-  background: #f5faff;
-  border-color: #75CCFF;
+.friends-box, .form-box, .spotify-box, .portfolio-box, .about-box {
+  background: unset;
+  border-color: unset;
+  color: unset;
 }
 
 /* Top 4 Friends Grid */
@@ -240,8 +234,16 @@ h1, h2, h3, h4, h5, h6 {
     gap: 24px;
     margin-top: 24px;
   }
-  .left-panel, .right-panel {
+  .left-panel,
+  .right-panel {
     gap: 24px;
+    width: 100%;
+    flex: unset;
+    display: block;
+  }
+  .section-box {
+    width: 100%;
+    box-sizing: border-box;
   }
   .portfolio-grid {
     grid-template-columns: 1fr;
@@ -260,6 +262,14 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   position: relative;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 12s linear infinite;
 }
 .marquee-text {
   display: inline-block;
@@ -267,12 +277,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   color: #fff;
   font-family: 'Orbitron', sans-serif;
-  animation: marquee 12s linear infinite;
-  padding: 12px 0;
+  padding: 0 2.5rem;
 }
 @keyframes marquee {
-  0%   { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .about-box {
