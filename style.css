@@ -115,10 +115,10 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-start;
 }
 .left-panel, .right-panel {
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: 100%;
 }
 
 /* Section Boxes */
@@ -131,11 +131,10 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 2px 12px 0 rgba(117,204,255,0.07);
   color: #fff !important;
   width: 100%;
+  position: static;
 }
 .friends-box, .form-box, .spotify-box, .portfolio-box, .about-box {
-  background: unset !important;
-  border-color: unset !important;
-  color: unset !important;
+  /* Removed background, border-color, and color unsets to allow .section-box to apply styles */
 }
 
 /* Top 4 Friends Grid */
