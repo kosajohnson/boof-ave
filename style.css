@@ -68,27 +68,6 @@ footer {
   font-size: 0.85rem;
 }
 
-.sparkle {
-  position: fixed;
-  pointer-events: none;
-  width: 18px;
-  height: 18px;
-  z-index: 9999;
-  opacity: 1;
-  animation: sparkle-fade 0.8s linear forwards;
-  background: none;
-  background-image: url('assets/other effects/sparkle.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-@keyframes sparkle-fade {
-  to {
-    opacity: 0;
-    transform: scale(0.5) translateY(-10px);
-  }
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
 }
@@ -103,7 +82,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Orbitron', sans-serif;
 }
 .site-header .logo {
-  width: 120px;
+  width: 100%;
+  max-width: 100%;
+  height: 120px;
+  max-height: 120px;
+  object-fit: contain;
   display: block;
   margin: 0 auto 12px auto;
 }
@@ -140,18 +123,19 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Boxes */
 .section-box {
-  background: #133a5c;
+  background: #133a5c !important;
   border: 2px solid var(--primary-color);
   border-radius: 0;
   padding: 28px 20px 24px 20px;
   margin-bottom: 0;
   box-shadow: 0 2px 12px 0 rgba(117,204,255,0.07);
-  color: #fff;
+  color: #fff !important;
+  width: 100%;
 }
 .friends-box, .form-box, .spotify-box, .portfolio-box, .about-box {
-  background: unset;
-  border-color: unset;
-  color: unset;
+  background: unset !important;
+  border-color: unset !important;
+  color: unset !important;
 }
 
 /* Top 4 Friends Grid */
@@ -227,6 +211,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
 }
 
+/* Space between last section and footer (desktop) */
+.left-panel > .section-box:last-child,
+.right-panel > .section-box:last-child {
+  margin-bottom: 48px;
+}
+
 /* Responsive Design */
 @media (max-width: 900px) {
   .main-columns {
@@ -244,6 +234,11 @@ h1, h2, h3, h4, h5, h6 {
   .section-box {
     width: 100%;
     box-sizing: border-box;
+    margin-bottom: 24px;
+  }
+  .left-panel > .section-box:last-child,
+  .right-panel > .section-box:last-child {
+    margin-bottom: 0;
   }
   .portfolio-grid {
     grid-template-columns: 1fr;
