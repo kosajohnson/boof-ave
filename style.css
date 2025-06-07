@@ -232,7 +232,7 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
-/* Portfolio Grid (2x5) */
+/* Portfolio Grid (2x5 desktop, 1x10 mobile) */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
