@@ -98,6 +98,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
   color: #e0f1fb;
 }
+#theme-toggle {
+  margin-top: 12px;
+  padding: 8px 20px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+}
+#theme-toggle:hover {
+  background: #111;
+}
 .site-footer {
   padding: 24px 0;
   font-size: 0.95rem;
