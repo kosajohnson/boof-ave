@@ -101,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 120px;
   border-radius: 50%;
   display: block;
-  margin: 0 auto 16px;
+  margin: 0 0 16px 0;
 }
 .site-header h1 {
   margin: 0 0 8px 0;
