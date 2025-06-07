@@ -135,7 +135,9 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-start;
 }
 .left-panel, .right-panel {
-  flex: 1;
+  flex: 1 1 50%;
+  width: 50%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -276,9 +278,7 @@ h1, h2, h3, h4, h5, h6 {
   .left-panel,
   .right-panel {
     width: 100%;
-    flex: unset;
-    display: block;
-    gap: 24px;
+    flex-basis: 100%;
   }
   .section-box {
     width: 100%;
