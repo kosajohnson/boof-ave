@@ -316,11 +316,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   font-family: 'Orbitron', sans-serif;
   padding: 0 2.5rem;
-  position: relative;
-}
-.marquee-text::after {
-  content: attr(data-text);
-  padding-left: 5rem;
 }
 @keyframes marquee {
   0%   { transform: translateX(0); }
