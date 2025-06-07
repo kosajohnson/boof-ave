@@ -22,6 +22,12 @@
   --card-bg: #222;
 }
 
+/* Dark theme section boxes */
+.theme-dark .section-box {
+  background: silver;
+  color: #111;
+}
+
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
