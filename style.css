@@ -268,6 +268,26 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
 }
 
+/* Service description cards */
+.portfolio-grid .service-card {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  text-align: left;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.portfolio-grid .service-card h3 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+}
+.portfolio-grid .service-card p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
 /* Space between last section and footer (desktop) */
 .left-panel > .section-box:last-child,
 .right-panel > .section-box:last-child {
