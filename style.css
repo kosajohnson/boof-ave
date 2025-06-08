@@ -374,3 +374,10 @@ h1, h2, h3, h4, h5, h6 {
   from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   to { opacity: 0; transform: translate(-50%, -50%) scale(0); }
 }
+
+/* Loading gif below services */
+.services-loading {
+  display: block;
+  width: 60px;
+  margin: 16px auto 0 auto;
+}
