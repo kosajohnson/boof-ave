@@ -195,6 +195,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0;
 }
 
+/* In dark mode, service text switches to black */
+.theme-dark .portfolio-box {
+  color: #000;
+}
+
 /* Top 4 Friends Grid */
 .friends-grid {
   display: grid;
@@ -272,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-grid .service-card {
   background: transparent;
   border: none;
-  color: var(--text-color);
+  color: inherit;
   text-align: left;
   padding: 0 4px;
   display: flex;
