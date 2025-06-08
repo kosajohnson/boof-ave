@@ -34,7 +34,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   display: block;
-  cursor: url('assets/other effects/chrome star.png') 16 16, auto;
+  cursor: url('assets/other effects/sparkle.png') 16 16, auto;
   background-image: url('assets/other effects/sparkle bg.png');
   background-repeat: repeat;
   background-size: auto;
@@ -358,4 +358,19 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* Cursor trailing sparkle */
+.cursor-trail {
+  pointer-events: none;
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  animation: trail-fade 0.8s linear forwards;
+}
+
+@keyframes trail-fade {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -50%) scale(0); }
 }
