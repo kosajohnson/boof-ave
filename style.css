@@ -380,6 +380,6 @@ h1, h2, h3, h4, h5, h6 {
 /* Loading gif below services */
 .services-loading {
   display: block;
-  width: 60px;
+  width: 120px;
   margin: 16px auto 0 auto;
 }
