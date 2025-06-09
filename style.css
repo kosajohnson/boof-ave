@@ -373,21 +373,6 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateX(-50%); }
 }
 
-/* Cursor trailing sparkle */
-.cursor-trail {
-  pointer-events: none;
-  position: fixed;
-  /* Updated dimensions to better match sparkle image aspect ratio */
-  width: 114px;
-  height: 44px;
-  transform: translate(-50%, -50%);
-  animation: trail-fade 4s linear forwards;
-}
-
-@keyframes trail-fade {
-  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  to { opacity: 0; transform: translate(-50%, -50%) scale(0); }
-}
 
 /* Loading gif below services */
 .services-loading {
