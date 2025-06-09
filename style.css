@@ -167,6 +167,10 @@ h1, h2, h3, h4, h5, h6 {
   position: static;
   border-radius: 0;
 }
+/* About section links inherit text color so they match the active theme */
+.about-box a {
+  color: inherit;
+}
 .friends-box {
   background: #133a5c;
   color: #fff;
