@@ -201,6 +201,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
 }
 
+/* In dark mode, Book Us text switches to black */
+.theme-dark .form-box {
+  color: #000;
+}
+
+/* In icy mode, Book Us text stays white */
+.theme-icy .form-box {
+  color: #fff;
+}
+
 /* Top 4 Friends Grid */
 .friends-grid {
   display: grid;
@@ -228,7 +238,7 @@ h1, h2, h3, h4, h5, h6 {
 .portal-caption {
   margin: 18px 0 8px 0;
   font-size: 1.05rem;
-  color: var(--text-color);
+  color: inherit;
   text-align: center;
 }
 .portal-btn {
@@ -293,6 +303,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-grid .service-card p {
   margin: 0;
   font-size: 0.9rem;
+  font-weight: normal;
 }
 
 /* Space between last section and footer (desktop) */
