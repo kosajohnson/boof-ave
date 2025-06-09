@@ -4,6 +4,11 @@ toggleBtn && toggleBtn.addEventListener("click", () => {
   const body = document.body;
   body.classList.toggle("theme-dark");
   body.classList.toggle("theme-icy");
+  if (body.classList.contains("theme-dark")) {
+    updateSparkleColor("#FFFFFF");
+  } else {
+    updateSparkleColor("#C0C0C0");
+  }
 });
 
 var colour="#C0C0C0";
@@ -46,10 +51,11 @@ window.onload=function() { if (document.getElementById) {
    rlef.style.left="0px";
    rdow.style.top="0px";
    rdow.style.left="2px";
-   document.body.appendChild(star[i]=rats);
- }
- set_width();
- sparkle();
+  document.body.appendChild(star[i]=rats);
+}
+set_width();
+ updateSparkleColor(document.body.classList.contains("theme-dark") ? "#FFFFFF" : "#C0C0C0");
+sparkle();
 }};
 function sparkle() {
  var c;
@@ -163,4 +169,17 @@ function createDiv(height, width) {
  div.style.overflow="hidden";
  div.style.backgroundColor=colour;
  return (div);
+}
+
+function updateSparkleColor(newColor) {
+  colour = newColor;
+  for (var i = 0; i < sparkles; i++) {
+    if (tiny[i]) {
+      tiny[i].style.backgroundColor = newColor;
+    }
+    if (star[i] && star[i].children.length >= 2) {
+      star[i].children[0].style.backgroundColor = newColor;
+      star[i].children[1].style.backgroundColor = newColor;
+    }
+  }
 }
