@@ -217,19 +217,20 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Top 4 Friends layout */
 .friends-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 18px;
 }
 .friends-grid .friend {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  text-align: center;
+  gap: 8px;
 }
 .friends-grid .friend img {
-  width: 120px;
-  height: 120px;
+  width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
   border-radius: 12px;
@@ -350,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-rows: repeat(10, 1fr);
   }
   .friends-grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 
