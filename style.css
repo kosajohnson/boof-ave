@@ -215,15 +215,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-/* Top 4 Friends Grid */
+/* Top 4 Friends layout */
 .friends-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   margin-top: 18px;
 }
-.friends-grid img {
+.friends-grid .friend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.friends-grid .friend img {
   width: 120px;
   height: 120px;
   aspect-ratio: 1/1;
@@ -231,6 +235,10 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 12px;
   border: 2px solid var(--accent-color);
   background: #fff;
+}
+.friends-grid .friend-name {
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /* Softr Form & Portal */
@@ -342,8 +350,7 @@ h1, h2, h3, h4, h5, h6 {
     grid-template-rows: repeat(10, 1fr);
   }
   .friends-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    flex-direction: column;
   }
 }
 
