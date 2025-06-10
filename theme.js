@@ -1,4 +1,5 @@
 const toggleBtn = document.getElementById("theme-toggle");
+const spotifyIframe = document.querySelector('.spotify-box iframe');
 
 toggleBtn && toggleBtn.addEventListener("click", () => {
   const body = document.body;
@@ -8,6 +9,14 @@ toggleBtn && toggleBtn.addEventListener("click", () => {
     updateSparkleColor("#FFFFFF");
   } else {
     updateSparkleColor("#C0C0C0");
+  }
+  if (spotifyIframe) {
+    const url = new URL(spotifyIframe.src);
+    url.searchParams.set(
+      "theme",
+      body.classList.contains("theme-icy") ? "1" : "0"
+    );
+    spotifyIframe.src = url.toString();
   }
 });
 
