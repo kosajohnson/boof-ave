@@ -16,17 +16,29 @@
 }
 
 .theme-dark {
-  --primary-color: #111;
-  --accent-color: #444;
-  --bg-color: #000;
+  --primary-color: #0f0f0f;
+  --accent-color: #9e9e9e;
+  --bg-color: #0a0a0a;
   --text-color: #fff;
   --card-bg: #222;
 }
 
+/* Icy theme section boxes */
+.theme-icy .section-box {
+  background: var(--primary-color);
+  color: var(--text-color);
+  width: 100%;
+  position: static;
+  border-radius: 0;
+}
+
 /* Dark theme section boxes */
 .theme-dark .section-box {
-  background: silver;
-  color: #111;
+  background: #2a2a2a;
+  color: #fff;
+  width: 100%;
+  position: static;
+  border-radius: 0;
 }
 
 body {
@@ -102,13 +114,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto 12px auto;
 }
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 240px;
+  height: 240px;
   border-radius: 12px;
-  border: 2px solid var(--accent-color);
+  border: none;
   background: transparent;
   display: block;
-  margin: 0 0 16px 0;
+  margin: 0 auto 16px auto;
 }
 .site-header h1 {
   margin: 0 0 8px 0;
@@ -191,43 +203,6 @@ h1, h2, h3, h4, h5, h6 {
 .friends-box h2,
 .form-box h2 {
   text-align: center;
-}
-/* Section box styles */
-.about-box,
-.friends-box,
-.form-box,
-.spotify-box,
-.portfolio-box {
-  background: #133a5c;
-  color: #fff;
-  width: 100%;
-  position: static;
-  border-radius: 0;
-}
-/* About section links inherit text color so they match the active theme */
-.about-box a {
-  color: inherit;
-}
-
-/* In dark mode, service text switches to black */
-.theme-dark .portfolio-box {
-  color: #000;
-}
-
-/* In dark mode, Book Us text switches to black */
-.theme-dark .form-box {
-  color: #000;
-}
-
-/* In icy mode, Book Us text stays white */
-.theme-icy .form-box {
-  color: #fff;
-}
-
-/* Section box colors in icy theme */
-.theme-icy .section-box {
-  background: var(--primary-color);
-  color: var(--text-color);
 }
 
 /* Top 4 Friends layout */
