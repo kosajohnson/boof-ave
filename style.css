@@ -104,7 +104,9 @@ h1, h2, h3, h4, h5, h6 {
 .profile-pic {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color);
+  background: #fff;
   display: block;
   margin: 0 0 16px 0;
 }
@@ -183,7 +185,19 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
   position: static;
 }
-.about-box {
+/* Center headers for non-services sections */
+.about-box h2,
+.spotify-box h2,
+.friends-box h2,
+.form-box h2 {
+  text-align: center;
+}
+/* Section box styles */
+.about-box,
+.friends-box,
+.form-box,
+.spotify-box,
+.portfolio-box {
   background: #133a5c;
   color: #fff;
   width: 100%;
@@ -193,34 +207,6 @@ h1, h2, h3, h4, h5, h6 {
 /* About section links inherit text color so they match the active theme */
 .about-box a {
   color: inherit;
-}
-.friends-box {
-  background: #133a5c;
-  color: #fff;
-  width: 100%;
-  position: static;
-  border-radius: 0;
-}
-.form-box {
-  background: #133a5c;
-  color: #fff;
-  width: 100%;
-  position: static;
-  border-radius: 0;
-}
-.spotify-box {
-  background: #133a5c;
-  color: #fff;
-  width: 100%;
-  position: static;
-  border-radius: 0;
-}
-.portfolio-box {
-  background: #133a5c;
-  color: #fff;
-  width: 100%;
-  position: static;
-  border-radius: 0;
 }
 
 /* In dark mode, service text switches to black */
