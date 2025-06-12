@@ -428,3 +428,34 @@ h1, h2, h3, h4, h5, h6 {
   height: 120px;
   margin: 16px auto 0 auto;
 }
+
+/* Centered layout for services section */
+.services-box {
+  text-align: center;
+}
+.services-box .service {
+  margin-top: 24px;
+}
+.services-box .service-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.services-box .service-images img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color);
+  background: #fff;
+}
+.services-box .service h3 {
+  margin: 8px 0 4px 0;
+  font-size: 1rem;
+}
+.services-box .service p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
