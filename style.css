@@ -1,6 +1,6 @@
 :root {
-  --primary-color: #B7E4FF;
-  --accent-color: #A7D7FF;
+  --primary-color: #9AC6EB;
+  --accent-color: #B7E4FF;
   --bg-color: #f5faff;
   --text-color: #5a5a5a;
   --card-bg: #e0f1fb;
@@ -8,7 +8,7 @@
 
 .theme-icy {
   /* Soft blue hues for the icy theme */
-  --primary-color: #A7D7FF;
+  --primary-color: #9AC6EB;
   --accent-color: #B7E4FF;
   --bg-color: #f5faff;
   --text-color: #5a5a5a;
@@ -25,7 +25,7 @@
 
 /* Icy theme section boxes */
 .theme-icy .section-box {
-  background: var(--primary-color);
+  background: #A7D7FF;
   color: #5a5a5a;
   width: 100%;
   position: static;
