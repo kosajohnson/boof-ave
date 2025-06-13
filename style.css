@@ -2,16 +2,16 @@
   --primary-color: #B7E4FF;
   --accent-color: #A7D7FF;
   --bg-color: #f5faff;
-  --text-color: #111;
+  --text-color: #5a5a5a;
   --card-bg: #e0f1fb;
 }
 
 .theme-icy {
   /* Soft blue hues for the icy theme */
-  --primary-color: #B7E4FF;
-  --accent-color: #A7D7FF;
+  --primary-color: #A7D7FF;
+  --accent-color: #B7E4FF;
   --bg-color: #f5faff;
-  --text-color: #111;
+  --text-color: #5a5a5a;
   --card-bg: #e0f1fb;
 }
 
@@ -26,7 +26,7 @@
 /* Icy theme section boxes */
 .theme-icy .section-box {
   background: var(--primary-color);
-  color: var(--text-color);
+  color: #5a5a5a;
   width: 100%;
   position: static;
   border-radius: 0;
