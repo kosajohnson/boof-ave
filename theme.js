@@ -7,11 +7,11 @@ toggleBtn && toggleBtn.addEventListener("click", () => {
   if (body.classList.contains("theme-dark")) {
     updateSparkleColor("#FFFFFF");
   } else {
-    updateSparkleColor("#C0C0C0");
+    updateSparkleColor("#000000");
   }
 });
 
-var colour="#C0C0C0";
+var colour="#000000";
 var sparkles=120;
 /****************************
 *  Tinkerbell Magic Sparkle *
@@ -54,7 +54,7 @@ window.onload=function() { if (document.getElementById) {
   document.body.appendChild(star[i]=rats);
 }
 set_width();
- updateSparkleColor(document.body.classList.contains("theme-dark") ? "#FFFFFF" : "#C0C0C0");
+ updateSparkleColor(document.body.classList.contains("theme-dark") ? "#FFFFFF" : "#000000");
 sparkle();
 }};
 function sparkle() {
