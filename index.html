@@ -1,160 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BOOF AVE™</title>
   <link rel="stylesheet" href="style.css"/>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Space+Grotesk&display=swap" rel="stylesheet">
 </head>
-<body class="theme-dark">
-    <div class="marquee-container">
-      <div class="marquee-track">
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
-        <span class="marquee-text">BOOF AVE™</span>
+<body>
+
+  <!-- Seamless single-row marquee -->
+  <header class="ticker" aria-label="Boof Ave marquee">
+    <div class="ticker__move">
+      <!-- Group A -->
+      <div class="ticker__group">
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+      </div>
+
+      <!-- Group B (clone) for perfect loop -->
+      <div class="ticker__group" aria-hidden="true">
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
+        <span>Boof Ave<sup>™</sup></span>
       </div>
     </div>
-  
-</header>
-  <main class="main-columns">
-    <section class="left-panel">
-      <div id="about" class="section-box about-box">
-        <h2>About Us</h2>
-        <img class="profile-pic" src="assets/logos/white-logo.png" alt="BOOF AVE profile logo" />
-        <p>
-          BOOF AVE is more than just a photography studio or physical location, it represents a collective of creative marketing and branding consultants dedicated to bringing your ideas to life. We exist to help you shape your stories through bold design, artistic direction, and unapologetic originality. Our mission is to equip small business owners, brands, and creatives with the resources and positioning necessary to establish lasting success. We are building infrastructure for the independent. 
-        </p>
-        <p>
-          —Somewhere on BOOF AVE, just beyond our own fantasies.
-        </p>
-        <p>
-          Status: Boofed
-        </p>
-        <p>
-          Links: <a href="https://www.instagram.com/boof_ave/" target="_blank">Instagram</a>
-        </p>
-      </div>
-      <div id="friends" class="section-box friends-box">
-        <h2>Top 4 Friends</h2>
-        <div class="friends-grid">
-          <div class="friend">
-            <img src="assets/smoof2.jpg" alt="Friend 1" />
-            <a href="https://www.instagram.com/smoofman/" class="friend-name" target="_blank">Smoof Man</a>
-          </div>
-          <div class="friend">
-            <img src="assets/jayyreall.jpg" alt="Friend 2" />
-            <a href="https://www.instagram.com/jarelamari/" class="friend-name" target="_blank">Jayy Reall</a>
-          </div>
-          <div class="friend">
-            <img src="assets/jxnoir2.jpeg" alt="Friend 3" />
-            <a href="https://www.instagram.com/jxnoir/" class="friend-name" target="_blank">Jxnoir</a>
-          </div>
-          <div class="friend">
-            <img src="assets/aj1kk.jpeg" alt="Friend 4" />
-            <a href="https://www.instagram.com/aj1kkk/" class="friend-name" target="_blank">aj1kk</a>
-          </div>
-        </div>
-      </div>
-      <div id="book" class="section-box form-box">
-        <h2>Book Us</h2>
-        <p>
-          Each service includes a complimentary 30-minute business consultation to help you build with clarity and confidence.
-        </p>
-        <iframe src="https://intake.boofave.com" width="100%" height="780px" frameborder="0"></iframe>
-      </div>
-    </section>
-    <section class="right-panel">
-      <div id="artists" class="section-box spotify-box">
-        <h2>Artists on the Ave</h2>
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0M1LZjAHdDktpEYYoUerxV?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      </div>
-      <div id="services" class="section-box portfolio-box services-box">
-        <h2>Our Services</h2>
-        <p>
-          We are here to work with your vision, not against your budget. We’re creative as hell with what we can do within limits. Respect our work, and we’ll overdeliver.
-        </p>
-        <div class="service">  
-          <h3>Branding</h3>
-          <div class="service-images">
-            <img src="assets/aj1kk-logo.png" alt="Branding example 1">
-            <img src="assets/c-g-logo.png" alt="Branding example 2">
-            <img src="assets/kupenda-logo.png" alt="Branding example 3">
-            <img src="assets/the-mentalchemist-logo.png" alt="Branding example 4">
-          </div>
-          <ul>
-            <li><strong>Single Logo:</strong> One high-resolution, custom logo + one revision</li>
-            <li><strong>Logo Variants:</strong> Two high-resolution, custom logos + one revision each</li>
-            <li><strong>Branding Pack:</strong> Two logos + three proofs of use + font pair + three color palette</li>
-          </ul>
-        </div>
+  </header>
 
-        <div class="service">
-          <h3>Design</h3>
-          <div class="service-images">
-            <img src="assets/1-of-1-cover.png" alt="Design example 1">
-            <img src="assets/no-pride.png" alt="Design example 2">
-            <img src="assets/boof-ave-patches.png" alt="Design example 3">
-            <img src="assets/atl-pack cover.png" alt="Design example 4">
-          </div>
-          <ul>
-            <li><strong>Marketing Materials:</strong> One flyer, social media post, etc.</li>
-            <li><strong>Detailed Graphics:</strong> One custom album cover, book illustration, etc.</li>
-            <li><strong>Product Mockups:</strong> One technical package + detailed render for a product, clothing item etc.</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <h3>Photo Production</h3>
-          <div class="service-images">
-            <img src="assets/c-g-shoot.png" alt="Photo production example 1">
-            <img src="assets/boof-ave-shoot.png" alt="Photo production example 2">
-            <img src="assets/kupenda-product-rebrand.png" alt="Photo production example 3">
-            <img src="assets/boofed-boy-shoot.png" alt="Photo production example 4">
-          </div>
-          <ul>
-            <li><strong>Base Shoot:</strong> 100 edited photos with color grading, etc. (one hour minimum)</li>
-            <li><strong>Additional Edits:</strong> For each additional set of 50 edited photos</li>
-            <li><strong>Optional Styling:</strong> Hair, make-up and outfit curation, shopping, and execution</li>
-          </ul>
-        </div>
-
-        <div class="service">
-          <h3>Video Production</h3>
-          <div class="service-images">
-            <img src="assets/Rod_Cowboy_Carter.jpg" alt="Video production example 1">
-            <img src="assets/CCxTH_logo3.png" alt="Video production example 2">
-            <img src="assets/white-boy-band.png" alt="Video production example 3">
-            <img src="assets/jarel-cupid-shoot.png" alt="Video production example 4">
-          </div>
-          <ul>
-            <li><strong>Base Shoot:</strong> One final video edit with color, transitions, etc. + b-roll footage (one hour minimum)</li>
-            <li><strong>Additional Edits:</strong> For each additional video edit with color, transitions, etc.</li>
-            <li><strong>Optional Styling:</strong> Hair, make-up and outfit curation, shopping, and execution</li>
-          </ul>
-        </div>
-
-        <img class="services-loading" src="assets/gifs/loading.gif" alt="Loading animation" />
-      </div>
+  <main>
+    <section class="hero">
+      <h2>Welcome to the Creative Space</h2>
+      <p>We’re building something amazing here.</p>
     </section>
   </main>
-  <footer class="site-footer">
+
+  <footer>
     <p>© 2025 BOOF AVE™. All rights reserved.</p>
   </footer>
-  
-  <div class="internal-links">
-    <a href="/redirect?id=ref01" class="internal-link" tabindex="-1" aria-hidden="true">visit</a>
-    <a href="/redirect?id=ref02" class="internal-link" tabindex="-1" aria-hidden="true">visit</a>
-    <a href="/redirect?id=ref03" class="internal-link" tabindex="-1" aria-hidden="true">visit</a>
-  </div>
-  
+
   <script src="theme.js"></script>
   <script src="core.js"></script>
 </body>
