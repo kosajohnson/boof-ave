@@ -191,8 +191,8 @@
     interactablesPush(sign);
 
     // side door (clickable)
-    const greenMat = new THREE.MeshPhongMaterial({ color: GREEN, shininess: 12, specular: 0x222222 });
-    const sideDoor = new THREE.Mesh(new THREE.BoxGeometry(1.1, 2.2, 0.05), greenMat);
+    const sideDoorMat = new THREE.MeshPhongMaterial({ color: GREEN, shininess: 12, specular: 0x222222 });
+    const sideDoor = new THREE.Mesh(new THREE.BoxGeometry(1.1, 2.2, 0.05), sideDoorMat);
     sideDoor.position.set(7.8, 1.2, -1.5);
     sideDoor.userData = { type:'knock', tip:'Knock (placeholder)' };
     building.add(sideDoor);
@@ -213,22 +213,26 @@
     planter( 2.0, -1.1);
 
     // --- interaction & controls ---
+    const tip = document.getElementById('tip');
     const controls = new PointerLockControls(camera, renderer.domElement);
-    document.body.addEventListener('click', () => controls.lock());
-    controls.addEventListener('lock', ()=> tip.style.display='none');
+    const lockClick = () => controls.lock();
+    document.body.addEventListener('click', lockClick);
+    const hideTipOnLock = () => tip.style.display = 'none';
+    controls.addEventListener('lock', hideTipOnLock);
 
     const keys = { w:false, a:false, s:false, d:false };
-    window.addEventListener('keydown', e=> { const k=e.key.toLowerCase(); if(k in keys) keys[k]=true; });
-    window.addEventListener('keyup',   e=> { const k=e.key.toLowerCase(); if(k in keys) keys[k]=false; });
+    function onKeyDown(e){ const k=e.key.toLowerCase(); if(k in keys) keys[k]=true; }
+    function onKeyUp(e){ const k=e.key.toLowerCase(); if(k in keys) keys[k]=false; }
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('keyup', onKeyUp);
 
     const speed = 2.2;
     const worldBounds = { xMin:-9, xMax: 9, zMin:-6, zMax: 6 };
 
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
-    const tip = document.getElementById('tip');
 
-    renderer.domElement.addEventListener('mousemove', (ev)=>{
+    function onMouseMove(ev){
       const rect = renderer.domElement.getBoundingClientRect();
       mouse.x = ((ev.clientX - rect.left)/rect.width)*2 - 1;
       mouse.y = -((ev.clientY - rect.top)/rect.height)*2 + 1;
@@ -242,9 +246,10 @@
       } else {
         tip.style.display = 'none';
       }
-    });
+    }
+    renderer.domElement.addEventListener('mousemove', onMouseMove);
 
-    renderer.domElement.addEventListener('click', (ev)=>{
+    function onClick(ev){
       if(controls.isLocked) return;
       const rect = renderer.domElement.getBoundingClientRect();
       mouse.x = ((ev.clientX - rect.left)/rect.width)*2 - 1;
@@ -262,10 +267,51 @@
       } else if(o.userData.type === 'plant'){
         o.material.color.offsetHSL(0.03, 0.0, 0.0);
       }
-    });
+    }
+    renderer.domElement.addEventListener('click', onClick);
 
     // night toggle
     const nightToggle = document.getElementById('toggleNight');
-    nightToggle.addEventListener('change', ()=>{
+    const onNightChange = ()=>{
       const night = nightToggle.checked;
-      sun.intensity  = night ? 0.
+      sun.intensity = night ? 0.2 : 1.15;
+      hemi.intensity = night ? 0.2 : 0.8;
+      lampLight.intensity = night ? 2.5 : 0;
+      scene.background.set(night ? 0x0b0d1a : 0x6ea2c6);
+    };
+    nightToggle.addEventListener('change', onNightChange);
+    onNightChange();
+
+    // animation loop
+    const clock = new THREE.Clock();
+    renderer.setAnimationLoop(()=>{
+      const dt = clock.getDelta();
+      if(controls.isLocked){
+        const dir = new THREE.Vector3(
+          (keys.d ? 1:0) - (keys.a ? 1:0),
+          0,
+          (keys.s ? 1:0) - (keys.w ? 1:0)
+        ).normalize().multiplyScalar(speed * dt);
+        camera.position.add(dir);
+        camera.position.x = THREE.MathUtils.clamp(camera.position.x, worldBounds.xMin, worldBounds.xMax);
+        camera.position.z = THREE.MathUtils.clamp(camera.position.z, worldBounds.zMin, worldBounds.zMax);
+      }
+      const target = door.userData.open ? Math.PI/2 : 0;
+      doorPivot.rotation.y += (target - doorPivot.rotation.y) * 0.1;
+      renderer.render(scene, camera);
+    });
+
+    // cleanup listeners
+    window.addEventListener('beforeunload', ()=>{
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('keyup', onKeyUp);
+      renderer.domElement.removeEventListener('mousemove', onMouseMove);
+      renderer.domElement.removeEventListener('click', onClick);
+      nightToggle.removeEventListener('change', onNightChange);
+      document.body.removeEventListener('click', lockClick);
+      controls.removeEventListener('lock', hideTipOnLock);
+    });
+
+  </script>
+</body>
+</html>
