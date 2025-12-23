@@ -302,3 +302,36 @@ footer p {
     flex-basis: 90%;
   }
 }
+
+/* Instagram preview section */
+#ig-preview {
+  margin: 4rem 0;
+}
+
+/* GRID WRAPPER — THIS IS THE KEY FIX */
+#ig-preview .ig-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* Override Instagram’s injected block styles */
+#ig-preview .instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 900px) {
+  #ig-preview .ig-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #ig-preview .ig-row {
+    grid-template-columns: 1fr;
+  }
+}
