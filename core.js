@@ -31,11 +31,11 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  let autoplay = setInterval(scrollToNext, 4500);
+  let autoplay = setInterval(scrollToNext, 7000);
 
   const restartAutoplay = () => {
     clearInterval(autoplay);
-    autoplay = setInterval(scrollToNext, 4500);
+    autoplay = setInterval(scrollToNext, 7000);
   };
 
   ['touchstart', 'mousedown', 'keydown'].forEach(evt => {
