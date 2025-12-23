@@ -5,60 +5,117 @@
   box-sizing: border-box;
 }
 
+:root {
+  --black: #020202;
+  --white: #f8f8f8;
+  --gray: #a0a0a0;
+  --accent: #CAB15D;
+  --ticker-gap: 64px;     /* spacing between words */
+  --ticker-speed: 18s;    /* lower = faster */
+}
+
 /* Page base */
 body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: sans-serif;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Layout */
 main {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  gap: clamp(3rem, 4vw, 5rem);
+  padding: clamp(1.5rem, 4vw, 4rem) clamp(1.5rem, 8vw, 7rem) 4rem;
 }
 
-.hero { text-align: center; }
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 
-footer {
+.section-heading {
   text-align: center;
-  padding: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--gray);
+}
+
+/* Sticky header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(2, 2, 2, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3.5rem);
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+}
+
+.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--accent);
 }
 
 /* ================================
    Seamless single-row marquee
    ================================ */
-:root {
-  --ticker-gap: 64px;     /* spacing between words */
-  --ticker-speed: 18s;    /* lower = faster */
-}
-
 .ticker {
   overflow: hidden;
   width: 100%;
-  background: transparent;        /* no bar behind text */
-  border-bottom: none;            /* remove the thin line */
-  line-height: 1;                 /* tighten line box */
-  /* soft edge fade so it looks premium (still invisible over black) */
+  background: transparent;
+  line-height: 1;
   mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 
 .ticker__move {
   display: flex;
-  width: max-content;             /* shrink-wrap to content */
+  width: max-content;
   animation: marquee var(--ticker-speed) linear infinite;
   will-change: transform;
 }
 
-/* Two identical groups placed back-to-back create a perfect loop.
-   We translate exactly one group width (-50%). */
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -66,10 +123,10 @@ footer {
 
 .ticker__group {
   display: inline-flex;
-  flex: 0 0 auto;                 /* don't shrink */
-  gap: var(--ticker-gap);         /* even spacing between items */
+  flex: 0 0 auto;
+  gap: var(--ticker-gap);
   padding: 10px 0;
-  padding-right: var(--ticker-gap); /* add trailing gap so the seam matches spacing */
+  padding-right: var(--ticker-gap);
 }
 
 .ticker__group span {
@@ -81,12 +138,167 @@ footer {
 }
 
 .ticker__group sup {
-  font-size: 0.55em;              /* smaller ™ */
-  vertical-align: super;          /* raise it */
+  font-size: 0.55em;
+  vertical-align: super;
   opacity: 0.95;
 }
 
-/* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .ticker__move { animation: none; }
+}
+
+/* Portfolio slider */
+.portfolio__slider {
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem 0;
+}
+
+.portfolio__track {
+  display: flex;
+  gap: clamp(1rem, 2vw, 2.5rem);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 0 clamp(1rem, 3vw, 3rem);
+}
+
+.portfolio__track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.portfolio__track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+.portfolio__item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #111;
+}
+
+.portfolio__item img {
+  width: 100%;
+  height: clamp(240px, 45vw, 520px);
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio__item figcaption {
+  position: absolute;
+  inset: auto 1.5rem 1.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Welcome section */
+.welcome {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.welcome h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.welcome p {
+  font-size: 1.1rem;
+}
+
+/* Services */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.service-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.service-card h3 a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.service-card h3 a:hover,
+.service-card h3 a:focus {
+  color: var(--accent);
+}
+
+.service-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+.logo-feature {
+  align-self: center;
+  max-width: 500px;
+  width: min(100%, 500px);
+  margin: clamp(0.5rem, 2vw, 1.25rem) auto;
+}
+
+.logo-feature img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.services + .logo-feature,
+.logo-feature + .welcome {
+  margin-top: -0.75rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+footer p {
+  color: var(--white);
+}
+
+.footer-link {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .main-nav ul {
+    flex-wrap: wrap;
+    letter-spacing: 0.2em;
+  }
+
+  .portfolio__item {
+    flex-basis: 90%;
+  }
 }
