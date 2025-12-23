@@ -16,3 +16,29 @@
     });
   });
 })();
+
+// Portfolio slider auto-scroll loop
+window.addEventListener('DOMContentLoaded', () => {
+  const sliderTrack = document.querySelector('.portfolio__track');
+  if (!sliderTrack) return;
+
+  const scrollToNext = () => {
+    const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
+    if (sliderTrack.scrollLeft >= maxScroll - 5) {
+      sliderTrack.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      sliderTrack.scrollBy({ left: sliderTrack.clientWidth, behavior: 'smooth' });
+    }
+  };
+
+  let autoplay = setInterval(scrollToNext, 4500);
+
+  const restartAutoplay = () => {
+    clearInterval(autoplay);
+    autoplay = setInterval(scrollToNext, 4500);
+  };
+
+  ['touchstart', 'mousedown', 'keydown'].forEach(evt => {
+    sliderTrack.addEventListener(evt, restartAutoplay, { passive: true });
+  });
+});
