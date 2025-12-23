@@ -7,45 +7,213 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <header class="site-header">
+    <!-- Seamless single-row marquee -->
+    <div class="ticker" aria-label="Boof Ave marquee">
+      <div class="ticker__move">
+        <!-- Group A -->
+        <div class="ticker__group">
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+        </div>
 
-  <!-- Seamless single-row marquee -->
-  <header class="ticker" aria-label="Boof Ave marquee">
-    <div class="ticker__move">
-      <!-- Group A -->
-      <div class="ticker__group">
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-      </div>
-
-      <!-- Group B (clone) for perfect loop -->
-      <div class="ticker__group" aria-hidden="true">
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
-        <span>Boof Ave<sup>™</sup></span>
+        <!-- Group B (clone) for perfect loop -->
+        <div class="ticker__group" aria-hidden="true">
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+          <span>Boof Ave<sup>™</sup></span>
+        </div>
       </div>
     </div>
+
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Welcome to the Creative Space</h2>
-      <p>We’re building something amazing here.</p>
+    <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
+      <div class="section-heading">
+        
+      </div>
+      <div class="portfolio__slider" aria-live="polite">
+        <div class="portfolio__track">
+          <figure class="portfolio__item">
+            <img src="assets/summer-session-flyer.png" alt="Summer Hoop Session flyer"/>
+            <figcaption class="eyebrow">Official event visual for Dwayne Neff's 2025 "Summer Hoop Sessions"</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/1-of-1-cover.png" alt="1 of 1 cover art"/>
+            <figcaption class="eyebrow">Official cover artwork for Jayy Reall's single "1 of 1"</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/wtf-cover.jpg" alt="WTF cover art"/>
+            <figcaption class="eyebrow">Official cover artwork for Teejay Mafioso's single "Wtf"</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/atl-pack-cover.png" alt="ATL PACK cover art"/>
+            <figcaption class="eyebrow">Official cover artwork for Dwayne Neff's two-track single "ATL Pack"</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/des-sons-cover.jpg" alt="DES SONS cover art"/>
+            <figcaption class="eyebrow">Official cover artwork for Jxnoir's album "DES SONS"</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/Juventus-dunk-front.png" alt=" Nike SBD x Juventus shoe straight-on"/>
+            <figcaption class="eyebrow">Aesthetic translation of the Juventus FC 2014 pink away kit as a Nike low-top skateboard dunk</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/Juventus-dunk-side.png" alt=" Nike SBD x Juventus shoe profile"/>
+            <figcaption class="eyebrow">Aesthetic translation of the Juventus FC 2014 pink away kit as a Nike low-top skateboard dunk</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <video class="portfolio__media" controls playsinline preload="metadata">
+              <source src="assets/Rod_Cowboy_Carter.m4v" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption class="eyebrow">
+              World-building study of a Cowboy Carter x Tommy Hilfiger campaign entitled “REALL AMERIIICAN”
+            </figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/rod-cowboy-carter.png" alt="Documentary style video Reall Ameriican shoot"/>
+            <figcaption class="eyebrow">World-building study of a Cowboy Carter x Tommy Hilfiger campaign entitled "REALL AMERIICAN"</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/niggas-in-paris-cover.png" alt="Ni*ggas in Paris cover art"/>
+            <figcaption class="eyebrow">Conceptual exploration of JAY-Z & Kanye West's "Ni**as in Paris" as single cover artwork</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/sing-about-me-cover.png" alt="Sing About Me cover art"/>
+            <figcaption class="eyebrow">Visual system expansion of Kendrick Lamar's "Sing About Me, I'm Dying of Thirst" as single cover artwork</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/midnight-bts-1.png" alt="Midnight BTS photo 1"/>
+            <figcaption class="eyebrow">Production still from aj1kk's "Midnight" music video shot by OC Visuals</figcaption>
+          </figure>
+          <figure class="portfolio__item">
+            <img src="assets/midnight-bts-2.png" alt="Midnight BTS photo 2"/>
+            <figcaption class="eyebrow">Production still from aj1kk's "Midnight" music video shot by OC Visuals</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="welcome" class="welcome">
+      <h2>Welcome to the Ave</h2>
+      <p>
+        Boof Ave™ is more than just a photography studio&mdash;we're a multidisciplinary creative house where bold concepts
+        meet meticulous execution. From strategy to final cut, our collective builds unforgettable visuals and experiences
+        tailored to innovators, tastemakers, and culture shifters.
+      </p>
+    </section>
+
+    <section class="services" aria-labelledby="services-title">
+      <div class="section-heading">
+        
+      </div>
+      <div class="services__grid">
+        <article class="service-card">
+          <h3><a href="booking.html#business-branding">Business &amp; Branding</a></h3>
+          <ul>
+            <li>Brand Logo</li>
+            <li>Brand Storyboard</li>
+            <li>Business Strategy Meeting</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h3><a href="booking.html#marketing-design">Marketing &amp; Design</a></h3>
+          <ul>
+            <li>Marketing Automation</li>
+            <li>UI/UX Website Design</li>
+            <li>Detailed Graphic Design</li>
+          </ul>
+        </article>
+        <article class="service-card">
+          <h3><a href="booking.html#photo-production">Imaging</a></h3>
+          <ul>
+            <li>Event Imaging</li>
+            <li>Studio Imaging</li>
+            <li>Image Consulting</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <figure class="logo-feature">
+      <img src="assets/boof-ave-white-lettermark.png" alt="Boof Ave lettermark"/>
+    </figure>
+    
+    <section class="welcome">
+      <h2>The Boofed Blog</h2>
+      <p>Slide over to our <a class="footer-link" href="https://substack.com/@boofave/posts">substack</a> for thoughts from our founders, behind-the-scenes clips, and process drops from our latest productions.</p>
+    </section>
+
+    <section class="services__grid" aria-label="Featured posts">
+      <article class="service-card">
+        <p class="eyebrow">2 minute video</p>
+        <h3>
+            Welcome to the Ave
+        </h3>
+        <p>
+          Meet our founders, Akosua and Jarel Robinson. Watch along as they introduce themselves and explain why this work is so important to them.
+        </p>
+      </article>
+      <article class="service-card">
+        <p class="eyebrow">1 minute read</p>
+        <h3>
+            Read before you book
+        </h3>
+        <p>
+          A quick primer we send to collaborators and clients detailing general guidelines and answers to our most frequently asked questions.
+        </p>
+      </article>
+      <article class="service-card">
+        <p class="eyebrow">5 minute read</p>
+        <h3>
+            Artist spotlight: Jayy Reall
+        </h3>
+        <p>
+          Exclusive interview with, and behind-the-scenes footage of, artist Jayy Reall. Learn how he builds and leverages his brand as a multi-hyphenate.
+        </p>
+      </article>
+      <article class="service-card">
+        <p class="eyebrow">2 minute read</p>
+        <h3>
+            Creativity in the era of AI
+        </h3>
+        <p>
+          How we we remain inspired while using machine learning as a tool for previsualization, not as a replacement for ingenuity or imagination. 
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-heading">
+        
+        <h2>Join our community!</h2>
+      </div>
     </section>
   </main>
 
-  <footer>
+  <footer id="contact">
     <p>© 2025 BOOF AVE™. All rights reserved.</p>
+    <p class="footer-tagline">Website powered by us.</p>
   </footer>
 
   <script src="core.js"></script>
