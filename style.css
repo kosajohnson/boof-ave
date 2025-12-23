@@ -175,7 +175,7 @@ p {
 
 .portfolio__item {
   flex: 0 0 auto;
-  width: min(1000px, 90vw);
+  width: min(500px, 90vw);
   aspect-ratio: 1 / 1;
   scroll-snap-align: center;
   position: relative;
@@ -242,9 +242,10 @@ p {
 }
 
 .profile-picture {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
+  width: min(280px, 100%);
+  aspect-ratio: 3 / 2;
+  height: auto;
+  border-radius: 18px;
   overflow: hidden;
   align-self: center;
   background: rgba(255, 255, 255, 0.06);
