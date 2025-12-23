@@ -22,18 +22,35 @@ window.addEventListener('DOMContentLoaded', () => {
   const sliderTrack = document.querySelector('.portfolio__track');
   if (!sliderTrack) return;
 
+  const sliderItems = Array.from(sliderTrack.querySelectorAll('.portfolio__item'));
+  if (!sliderItems.length) return;
+
+  const getStepSize = () => {
+    const { gap, columnGap } = getComputedStyle(sliderTrack);
+    const resolvedGap = parseFloat(columnGap || gap || '0') || 0;
+    return sliderItems[0].getBoundingClientRect().width + resolvedGap;
+  };
+
+  let currentIndex = 0;
+
+  const scrollToIndex = (index) => {
+    const stepSize = getStepSize();
+    if (!stepSize) return;
+    sliderTrack.scrollTo({ left: stepSize * index, behavior: 'smooth' });
+  };
+  
   const scrollToNext = () => {
-    const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
-    if (sliderTrack.scrollLeft >= maxScroll - 5) {
-      sliderTrack.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      sliderTrack.scrollBy({ left: sliderTrack.clientWidth, behavior: 'smooth' });
-    }
+    currentIndex = (currentIndex + 1) % sliderItems.length;
+    scrollToIndex(currentIndex);
   };
 
   let autoplay = setInterval(scrollToNext, 7000);
 
   const restartAutoplay = () => {
+    const stepSize = getStepSize();
+    if (stepSize) {
+      currentIndex = Math.round(sliderTrack.scrollLeft / stepSize);
+    }
     clearInterval(autoplay);
     autoplay = setInterval(scrollToNext, 7000);
   };
@@ -41,4 +58,6 @@ window.addEventListener('DOMContentLoaded', () => {
   ['touchstart', 'mousedown', 'keydown'].forEach(evt => {
     sliderTrack.addEventListener(evt, restartAutoplay, { passive: true });
   });
+
+  window.addEventListener('resize', () => scrollToIndex(currentIndex));
 });
