@@ -20,7 +20,11 @@
   
   <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+<body data-transition="booking">
+  <div class="page-transition" aria-hidden="true">
+    <p class="page-transition__welcome">Welcome to Boof Ave</p>
+    <img class="page-transition__logo" src="assets/boof-ave-white-lettermark.png" alt="Boof Ave lettermark"/>
+  </div>
   <header class="site-header">
     <div class="ticker" aria-label="Boof Ave marquee">
       <div class="ticker__move">
@@ -197,5 +201,6 @@
     <p>© 2025 BOOF AVE™. All rights reserved.</p>
     <p class="footer-tagline">Powered by us.</p>
   </footer>
+  <script src="core.js"></script>
 </body>
 </html>
