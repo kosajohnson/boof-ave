@@ -24,32 +24,25 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!body || !overlay) return;
 
   const transitionId = body.dataset.transition;
-  const welcome = overlay.querySelector('.page-transition__welcome');
   const logo = overlay.querySelector('.page-transition__logo');
 
   const INTRO_TIMING = {
-    welcomeDelay: 550,
-    welcomeToLogo: 2500,
-    revealStart: 4400,
-    done: 5600
+    stampDelay: 700,
+    revealStart: 2500,
+    done: 3600
   };
 
   const runIndexIntro = () => {
     body.classList.add('is-transitioning', 'is-intro');
 
     window.setTimeout(() => {
-      if (welcome) welcome.classList.add('is-visible');
-    }, INTRO_TIMING.welcomeDelay);
-
-    window.setTimeout(() => {
-      if (welcome) welcome.classList.remove('is-visible');
-      if (logo) logo.classList.add('is-visible');
-    }, INTRO_TIMING.welcomeToLogo);
+      if (logo) logo.classList.add('is-stamped');
+    }, INTRO_TIMING.stampDelay);
 
     window.setTimeout(() => {
       body.classList.remove('is-intro');
       body.classList.add('is-ready');
-      if (logo) logo.classList.remove('is-visible');
+      if (logo) logo.classList.remove('is-stamped');
     }, INTRO_TIMING.revealStart);
 
     window.setTimeout(() => {
