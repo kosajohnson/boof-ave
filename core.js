@@ -27,27 +27,34 @@ window.addEventListener('DOMContentLoaded', () => {
   const welcome = overlay.querySelector('.page-transition__welcome');
   const logo = overlay.querySelector('.page-transition__logo');
 
+  const INTRO_TIMING = {
+    welcomeDelay: 550,
+    welcomeToLogo: 2500,
+    revealStart: 4400,
+    done: 5600
+  };
+
   const runIndexIntro = () => {
     body.classList.add('is-transitioning', 'is-intro');
 
     window.setTimeout(() => {
       if (welcome) welcome.classList.add('is-visible');
-    }, 300);
+    }, INTRO_TIMING.welcomeDelay);
 
     window.setTimeout(() => {
       if (welcome) welcome.classList.remove('is-visible');
       if (logo) logo.classList.add('is-visible');
-    }, 1500);
+    }, INTRO_TIMING.welcomeToLogo);
 
     window.setTimeout(() => {
       body.classList.remove('is-intro');
       body.classList.add('is-ready');
       if (logo) logo.classList.remove('is-visible');
-    }, 2800);
+    }, INTRO_TIMING.revealStart);
 
     window.setTimeout(() => {
       body.classList.remove('is-transitioning');
-    }, 3500);
+    }, INTRO_TIMING.done);
   };
 
   const runStandardReveal = () => {
@@ -92,7 +99,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       window.setTimeout(() => {
         window.location.href = destination.href;
-      }, 500);
+      }, 700);
     });
   });
 });
