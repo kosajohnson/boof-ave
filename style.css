@@ -60,7 +60,7 @@ body.is-ready {
 
 .page-transition__logo.is-stamped {
   opacity: 1;
-  animation: stamp-hit 0.7s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
+  animation: stamp-hit 1.4s cubic-bezier(0.2, 0.9, 0.25, 1) forwards;
 }
 
 @keyframes stamp-hit {
