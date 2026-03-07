@@ -25,12 +25,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const transitionId = body.dataset.transition;
   const logo = overlay.querySelector('.page-transition__logo');
-
   const INTRO_TIMING = {
     stampDelay: 700,
     revealStart: 2500,
     done: 3600
   };
+
+  let introStarted = false;
 
   const runIndexIntro = () => {
     body.classList.add('is-transitioning', 'is-intro');
@@ -63,10 +64,21 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 900);
   };
 
-  if (transitionId === 'index') {
-    runIndexIntro();
+  const startIntroWhenLoaded = () => {
+    if (introStarted) return;
+    introStarted = true;
+
+    if (transitionId === 'index') {
+      runIndexIntro();
+    } else {
+      runStandardReveal();
+    }
+  };
+
+  if (document.readyState === 'complete') {
+    startIntroWhenLoaded();
   } else {
-    runStandardReveal();
+    window.addEventListener('load', startIntroWhenLoaded, { once: true });
   }
 
   const pageLinks = document.querySelectorAll('a[href]');
