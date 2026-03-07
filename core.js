@@ -26,9 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
   const transitionId = body.dataset.transition;
   const logo = overlay.querySelector('.page-transition__logo');
   const INTRO_TIMING = {
-    stampDelay: 700,
-    revealStart: 2500,
-    done: 3600
+    stampDelay: 900,
+    revealStart: 4900,
+    done: 6100
   };
 
   let introStarted = false;
