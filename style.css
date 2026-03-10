@@ -85,17 +85,13 @@ body.is-transitioning {
   overflow: hidden;
 }
 
-body.is-entering .page-transition {
-  opacity: 1;
-}
-
-body.is-ready .page-transition,
+body.is-intro .page-transition,
 body.is-leaving .page-transition {
-  opacity: 0;
+  opacity: 1;
 }
 
-body.is-intro .page-transition {
-  opacity: 1;
+body.is-overlay-complete .page-transition {
+  opacity: 0;
 }
 
 body.is-leaving .page-transition {
@@ -308,6 +304,10 @@ p {
   text-align: center;
 }
 
+#branding .services__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .service-card {
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 1.5rem;
@@ -418,6 +418,18 @@ footer p {
 
   .founders .service-card p {
     font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 900px) {
+  #branding .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #branding .services__grid {
+    grid-template-columns: 1fr;
   }
 }
 
