@@ -85,17 +85,13 @@ body.is-transitioning {
   overflow: hidden;
 }
 
-body.is-entering .page-transition {
-  opacity: 1;
-}
-
-body.is-ready .page-transition,
+body.is-intro .page-transition,
 body.is-leaving .page-transition {
-  opacity: 0;
+  opacity: 1;
 }
 
-body.is-intro .page-transition {
-  opacity: 1;
+body.is-overlay-complete .page-transition {
+  opacity: 0;
 }
 
 body.is-leaving .page-transition {

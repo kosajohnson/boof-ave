@@ -25,61 +25,40 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const transitionId = body.dataset.transition;
   const logo = overlay.querySelector('.page-transition__logo');
-  const INTRO_TIMING = {
-    stampDelay: 900,
-    revealStart: 4900,
-    done: 6100
+  const STAMP_DURATION = 2400;
+
+  const finishOverlay = () => {
+    body.classList.remove('is-intro', 'is-transitioning');
+    body.classList.add('is-overlay-complete');
   };
 
-  let introStarted = false;
-
-  const runIndexIntro = () => {
-    body.classList.add('is-transitioning', 'is-intro');
-
-    window.setTimeout(() => {
-      if (logo) logo.classList.add('is-stamped');
-    }, INTRO_TIMING.stampDelay);
-
-    window.setTimeout(() => {
-      body.classList.remove('is-intro');
-      body.classList.add('is-ready');
-      if (logo) logo.classList.remove('is-stamped');
-    }, INTRO_TIMING.revealStart);
-
-    window.setTimeout(() => {
-      body.classList.remove('is-transitioning');
-    }, INTRO_TIMING.done);
-  };
-
-  const runStandardReveal = () => {
-    body.classList.add('is-transitioning', 'is-entering');
-
-    window.setTimeout(() => {
-      body.classList.remove('is-entering');
-      body.classList.add('is-ready');
-    }, 120);
-
-    window.setTimeout(() => {
-      body.classList.remove('is-transitioning');
-    }, 900);
-  };
-
-  const startIntroWhenLoaded = () => {
-    if (introStarted) return;
-    introStarted = true;
-
-    if (transitionId === 'index') {
-      runIndexIntro();
-    } else {
-      runStandardReveal();
+  const runStampSequence = () => {
+    if (!logo || transitionId !== 'index') {
+      finishOverlay();
+      return;
     }
+
+    body.classList.add('is-intro');
+    logo.classList.add('is-stamped');
+
+    window.setTimeout(() => {
+      logo.classList.remove('is-stamped');
+      finishOverlay();
+    }, STAMP_DURATION);
   };
 
-  if (document.readyState === 'complete') {
-    startIntroWhenLoaded();
-  } else {
-    window.addEventListener('load', startIntroWhenLoaded, { once: true });
-  }
+  const onBodyRevealComplete = (event) => {
+    if (event.target !== body || event.propertyName !== 'opacity') return;
+    body.removeEventListener('transitionend', onBodyRevealComplete);
+    runStampSequence();
+  };
+
+  body.classList.add('is-transitioning');
+  body.addEventListener('transitionend', onBodyRevealComplete);
+
+  requestAnimationFrame(() => {
+    body.classList.add('is-ready');
+  });
 
   const pageLinks = document.querySelectorAll('a[href]');
   pageLinks.forEach((link) => {
